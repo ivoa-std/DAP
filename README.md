@@ -8,7 +8,7 @@ datacubes of three or more dimensions.
 ## Status
 
 The last stable version is
-**[REC-2.0](http://www.ivoa.net/documents/latest/SIA.html)**.
+**[REC-2.0](https://ivoa.net/documents/SIA/20151223/)**.
 
 SIA 2.0 ported to github
 
