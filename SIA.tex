@@ -20,20 +20,16 @@
 \author{Douglas Tody}
 \author{Fran\c cois Bonnarel}
 
-
 \editor{Patrick Dowler, Fran\c cois Bonnarel}
 
 \previousversion{}
 
 \begin{document}
-
 \begin{abstract}
 The Simple Image Access protocol (SIA) provides capabilities for the discovery, description, access, and retrieval of multi-dimensional image datasets, including 2-D images as well as datacubes of three or more dimensions.  SIA data discovery is based on the ObsCore Data Model (ObsCoreDM, \cite{std:OBSCORE}), which primarily describes data products by the physical axes (spatial, spectral, time, and polarization). Image datasets with dimension greater than 2 are often referred to as \textit{datacubes}, \textit{cube} or \textit{image cube} datasets and may be considered examples of \textit{hypercube} or \textit{n-cube} data.  In this document the term “image” refers to general multi-dimensional datasets and is synonymous with these other terms unless the image dimensionality is otherwise specified. \\
 SIA provides capabilities for image discovery and access. Data discovery and  metadata access (using ObsCoreDM) are defined here. The capabilities for drilling down  to data files (and related resources) and services for remote access are defined elsewhere, but SIA also allows for direct access to retrieval. 
 \end{abstract}
-
 \section*{Acknowledgments}
-
 The authors would like to thank all the participants in DAL-WG discussions  for their ideas, critical reviews, and contributions to this document.
 
 \section{Introduction}
@@ -56,8 +52,6 @@ The ObsCore data model has been defined in \cite{std:OBSCORE}, it contains and o
 \subsection{The Role in the IVOA Architecture}
 
 SIA specifies standardID values for each capability, as defined by VODataService \citep{std:VODS11}. SIA services may be registered in an IVOA Registry using the SimpleDALRegExt \citep{std:DALREGEXT} extension schema.
-
-
 \subsection{Changes from SIA-1.0 to SIA-2.0}
 
 Virtual Observatory access to astronomical images has been available via the SIA-1.0 protocol for over a decade.  Many such services have been implemented since 2002, and SIA-1.0 \citep{std:SIAP} was formally standardized as an IVOA Recommendation in 2009.  The legacy SIA standard however pre-dates much of the VO technology developed since 2002, and is limited to two-dimensional images.  SIA-2.0 is multi-dimensional and fully integrated with the modern VO architecture and related standards.
@@ -86,7 +80,6 @@ While some of the more advanced capabilities for dynamic access to multi-dimensi
 \subsection{Motivating Use Cases}
 Below are some of the more common use cases that have motivated the development of the SIA specification. While this is not complete, it helps to understand the problem area covered by this specification.
 \subsubsection{Simple Data Discovery}
-
 Simple data discovery entails finding services that provide parameter based discovery of images and datacubes, querying the service(s) with a few well known kinds of queries that cover greater than 95\% of use, and getting back easily parsed summary metadata about each available data product. The service discovery would be performed with an IVOA Registry search using a new service type defined for SIA-2.0. 
 
 The query for data would need to allow for querying in position, energy, time, and polarization:
