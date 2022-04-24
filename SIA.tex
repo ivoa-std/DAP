@@ -496,7 +496,11 @@ The MAXREC parameter is defined in DALI and allows the client to limit the numbe
  The DALI UPLOAD parameter is not used by this version of SIA. The use case of uploading lists of coordinates is covered by the multiple-valued parameters values.
 
 \subsubsection{Service PARAMETER self description}
-Any service SHOULD  include a DataLink service descriptor in the VOTable output to describe itself. This descriptor would describe the supported query parameters (standard and custom), including list of values for those with a fixed list (COLLECTION, INSTRUMENT, FACILITY, DPTYPE, CALIB, and FORMAT). This is peculiarly important for those parameters where the fixed list is not standardized by any specification such as COLLECTION, INSTRUMENT and FACILITY.
+Any service SHOULD  include a DataLink service descriptor in the VOTable output to describe itself. 
+This descriptor would describe the supported query parameters (standard and custom), including list 
+of values for those with a fixed list (COLLECTION, INSTRUMENT, FACILITY, DPTYPE, CALIB, and FORMAT).
+This is particularly important for those parameters where the fixed list is not standardized by any
+specification such as COLLECTION, INSTRUMENT and FACILITY.
 
 \subsection{Availability: VOSI-availability}
 A web service with SIA capabilities must have a VOSI-availability resource \citep{std:VOSI}  as described in DALI .
