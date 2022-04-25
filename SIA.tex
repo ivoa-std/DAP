@@ -489,6 +489,13 @@ The TARGET parameter is a string-valued parameter that specifies the name of the
 \subsubsection{FORMAT}
 The FORMAT parameter specifies response format(s)  (the access\_format column from the ObsCore data model). This column describes the format of the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they could be the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}).  
 
+\subsection{RELEASEDATE}
+The RELEASEDATE parameter specifies the range of release dates to be searched for data. 
+The limits are compared to the obs\_release\_date optional attribute of the ObsCore data model. 
+They are expressed as 2 ISO 8601 dates in the general case. A single value is searched for an exact match.
+As the obs\_release\_date attribute is optional, the service self description (\ref{sec:selfdesc})  informs the user of the availability of this parameter.
+RELEASEDATE queries for services not providing the release\_date attribute SHOULD provide an empty response.
+
 \subsubsection{MAXREC}
 The MAXREC parameter is defined in DALI and allows the client to limit the number or records in the response. A service implementation may also impose default and maximum values for this limit. However the limit is determined, if the output is truncated due to the limit the server must indicate this using an overflow  (section~\ref{sec:succesful}) indicator except in the the special case of MAXREC=0, where the  service respond with metadata-only (normal output document with no records).
 
@@ -496,6 +503,7 @@ The MAXREC parameter is defined in DALI and allows the client to limit the numbe
  The DALI UPLOAD parameter is not used by this version of SIA. The use case of uploading lists of coordinates is covered by the multiple-valued parameters values.
 
 \subsubsection{Service PARAMETER self description}
+\label{sec:selfdesc}
 Any service may  include a DataLink service descriptor in the VOTable output to describe itself. This descriptor would describe the supported query parameters (standard and custom), including list of values for those with a fixed list (e.g. COLLECTION, INSTRUMENT, FACILITY, DPTYPE, CALIB, and FORMAT).
 
 \subsection{Availability: VOSI-availability}
