@@ -487,7 +487,7 @@ CALIB=3
 The TARGET parameter is a string-valued parameter that specifies the name of the target (e.g. the intention of the original science program or observation). The value is compared with the target\_name from the ObsCore data model.
 
 \subsubsection{FORMAT}
-The FORMAT parameter specifies response format(s)  (the access\_format column from the ObsCore data model). This column describes the format of the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they could be the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}).  
+The FORMAT parameter specifies the  format returned by  the access  link.  The value is compared with the access\_format column from the ObsCore data model. This column describes the format of the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they could be the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}).  
 
 \subsubsection{MAXREC}
 The MAXREC parameter is defined in DALI and allows the client to limit the number or records in the response. A service implementation may also impose default and maximum values for this limit. However the limit is determined, if the output is truncated due to the limit the server must indicate this using an overflow  (section~\ref{sec:succesful}) indicator except in the the special case of MAXREC=0, where the  service respond with metadata-only (normal output document with no records).
