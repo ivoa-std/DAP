@@ -7,7 +7,7 @@ DOCNAME = SIA
 DOCVERSION = 2.1
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2022-04-22
+DOCDATE = 2022-04-25
 
 # What is it you're writing: NOTE, WD, PR, or REC
 DOCTYPE = WD
