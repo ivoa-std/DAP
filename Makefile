@@ -1,13 +1,13 @@
 # ivoatex Makefile.  The ivoatex/README for the targets available.
 
 # short name of your document (edit $DOCNAME.tex; would be like RegTAP)
-DOCNAME = SIA
+DOCNAME = DAP 
 
 # count up; you probably do not want to bother with versions <1.0
 DOCVERSION = 2.1
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2022-04-25
+DOCDATE = 2022-09-28
 
 # What is it you're writing: NOTE, WD, PR, or REC
 DOCTYPE = WD

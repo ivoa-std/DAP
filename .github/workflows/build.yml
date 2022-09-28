@@ -1,7 +1,7 @@
 name: Check the IVOA document
 
 env:
-  doc_name: SIA
+  doc_name: DAP 
 
 on:
   pull_request:
