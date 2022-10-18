@@ -29,4 +29,19 @@ VECTORFIGURES =
 # Additional files to distribute (e.g., CSS, schema files, examples...)
 AUX_FILES = 
 
-include ivoatex/Makefile
+-include ivoatex/Makefile
+
+ivoatex/Makefile:
+	@echo "*** ivoatex submodule not found.  Initialising submodules."
+	@echo
+	git submodule update --init
+
+# Shortcut aliases
+pdf: $(DOCNAME).pdf
+
+draft: $(DOCNAME)-draft.pdf
+
+html: $(DOCNAME).html
+
+zip: package
+
