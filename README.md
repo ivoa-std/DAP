@@ -1,13 +1,13 @@
-[![PDF-Preview](https://img.shields.io/badge/Preview-PDF-blue)](../../releases/download/auto-pdf-preview/SIA-draft.pdf)
-# SIA
+[![PDF-Preview](https://img.shields.io/badge/Preview-PDF-blue)](../../releases/download/auto-pdf-preview/DAP-draft.pdf)
+# DAP
 
-The Simple Image Access protocol (SIA) provides capabilities for the discovery, description, 
+The Dataset Access Protocol (DAP, name still TBD) provides capabilities for the discovery, description, 
 access, and retrieval of multi-dimensional image datasets, including 2-D images as well as 
 datacubes of three or more dimensions.  
 
 ## Status
 
-The last stable version is
+This draft version is based off SIA-2.0. The last stable version is
 **[REC-2.0](https://ivoa.net/documents/SIA/20151223/)**.
 
 SIA 2.0 ported to github
@@ -25,7 +25,7 @@ SIA 2.0 ported to github
 
 ## Want to contribute?
 
-1. [Raise a GitHub Issue](https://github.com/ivoa-std/SIA/issues/new) on this
+1. [Raise a GitHub Issue](https://github.com/ivoa-std/DAP/issues/new) on this
    repository
 
 2. Fork this repository _(eventually clone it on your machine if you want to)_
