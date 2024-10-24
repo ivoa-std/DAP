@@ -11,15 +11,16 @@
 \usepackage{textcomp}
 \usepackage{float}
 
-\title{IVOA Simple Image Access}
+\title{IVOA Dataset Access Protocol}
 
 \ivoagroup{Data Access Layer Working Group}
 
 \author{Patrick Dowler}
 \author{Douglas Tody}
 \author{Fran\c cois Bonnarel}
+\author[Gregory Dubois-Felsmann}
 
-\editor{Patrick Dowler, Fran\c cois Bonnarel}
+\editor{Patrick Dowler, Fran\c cois Bonnarel, Gregory Dubois-Felsmann}
 
 \previousversion{}
 
@@ -235,14 +236,14 @@ POS=RANGE 0 360.0 -2.0 2.0
 The north pole: 
 
 \begin{lstlisting}
-POS=RANGE 0 360.0 89.0 +Inf 
+POS=RANGE 0 360.0 89.0 90.0
 \end{lstlisting}
 Although it is not really useful, the whole sky can be expressed:
 
 
 
 \begin{lstlisting}
-POS=RANGE -Inf +Inf -Inf +Inf
+POS=RANGE 0.0 360.0 -90.0 90.0
 \end{lstlisting}
 
 
@@ -483,10 +484,13 @@ CALIB=3
 \end{lstlisting}
 
 \subsubsection{TARGET}
-The TARGET parameter is a string-valued parameter that specifies the name of the target (e.g. the intention of the original science program or observation). The value is compared with the target\_name from the ObsCore data model.
+The TARGET parameter is a string-valued parameter that specifies the name of the target (e.g. the intention of the original science program or observation).
+The value is compared with the target\_name from the ObsCore data model.
 
 \subsubsection{FORMAT}
-The FORMAT parameter specifies the  format returned by  the access  link.  The value is compared with the access\_format column from the ObsCore data model. This column describes the format of the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they could be the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}).  
+The FORMAT parameter specifies the format returned by the access link. The value is compared with the access\_format column from the ObsCore data model. 
+This column describes the format of the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they 
+could be the DataLink MIME type (\cite{std:DataLink}, \cite{std:TSV}).
 
 \subsection{RELEASEDATE}
 The RELEASEDATE parameter specifies the range of release dates to be searched for data. 
