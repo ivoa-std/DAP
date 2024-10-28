@@ -27,8 +27,13 @@
 \begin{document}
 \begin{abstract}
 
-The Dataset   Access protocol (DAP) provides capabilities for the discovery, description, access, and retrieval of dataproducts, including spectra, timeseries, visibility data,   2-D images as well as datacubes of three or more dimensions.  DAP data discovery is based on the ObsCore Data Model (ObsCoreDM, \cite{std:OBSCORE}), which primarily describes data products by the physical axes (spatial, spectral, time, and polarization). Image datasets with dimension greater than 2 are often referred to as \textit{datacubes}, \textit{cube} or \textit{image cube} datasets and may be considered examples of \textit{hypercube} or \textit{n-cube} data.  In this document the term “image” refers to general multi-dimensional datasets and is synonymous with these other terms unless the image dimensionality is otherwise specified. \\
-DAP provides capabilities for dataset discovery and access. Data discovery and  metadata access (using ObsCoreDM) are defined here. The capabilities for drilling down  to data files (and related resources) and services for remote access are defined elsewhere, but DAP also allows for direct access to retrieval. 
+The Dataset   Access protocol (DAP) provides capabilities for the discovery, description, access, and retrieval of dataproducts, including spectra, timeseries, visibility data,
+2-D images as well as datacubes of three or more dimensions.  DAP data discovery is based on the ObsCore Data Model (ObsCoreDM, \cite{std:OBSCORE}), which primarily describes
+data products by the physical axes (spatial, spectral, time, and polarization). Image datasets with dimension greater than 2 are often referred to as \textit{datacubes},
+\textit{cube} or \textit{image cube} datasets and may be considered examples of \textit{hypercube} or \textit{n-cube} data.  In this document the term “image” refers to general
+multi-dimensional datasets and is synonymous with these other terms unless the image dimensionality is otherwise specified. \\
+DAP provides capabilities for dataset discovery and access. Data discovery and  metadata access (using ObsCoreDM) are defined here. The capabilities for drilling down 
+to data files (and related resources) and services for remote access are defined elsewhere, but DAP also allows for direct access to retrieval. 
 
 \end{abstract}
 \section*{Acknowledgments}
@@ -36,8 +41,12 @@ The authors would like to thank all the participants in DAL-WG discussions  for 
 
 \section{Introduction}
 
-The Dataset Access (DAP) protocol defines several capabilities to support discovery and access to astronomical datasets of any type and dimension.  Typical datasets include spectra, timeseries, 2-D spatial images, spectral data cubes, and cube and hypercube data of higher dimensions as well as derived image data products an event list or visibility data.  The underlying ObsCore data model is a simplified view on the typical image datasets derived from observational data, which have some combination of spatial, spectral (including velocity and redshift), time, and polarization axes.  
-For complete access to datacubes, the SIA-2.0 specification  makes use of features defined in DataLink \citep{std:DataLink}. It also makes use of AccessData services such as SODA \citep{2017ivoa.spec.0517B}, as well as custom data services.
+The Dataset Access (DAP) protocol defines several capabilities to support discovery and access to astronomical datasets of any type and dimension.  Typical datasets include 
+spectra, timeseries, 2-D spatial images, spectral data cubes, and cube and hypercube data of higher dimensions as well as derived image data products an event list or
+visibility data.  The underlying ObsCore data model is a simplified view on the typical image datasets derived from observational data, which have some combination of
+spatial, spectral (including velocity and redshift), time, and polarization axes.  
+For complete access to datacubes, the SIA-2.0 specification  makes use of features defined in DataLink \citep{std:DataLink}. It also makes use of AccessData services such
+as SODA \citep{2017ivoa.spec.0517B}, as well as custom data services.
 
 
 
@@ -50,12 +59,17 @@ For complete access to datacubes, the SIA-2.0 specification  makes use of featur
 \end{figure}
 
 
-DAP defines data discovery and metadata capabilities that work with other DAL services to enable image, data cube and other types of dataset access. The basic interface for the capabilities defined in this specification are described in DALI \citep{std:DALI}. DataLink can be used with DAP for finding access URL(s) for files, related resources, and data services such as SODA. DAP services also support VOSI-availability and VOSI-capabilities \citep{std:VOSI}  resources.
+DAP defines data discovery and metadata capabilities that work with other DAL services to enable image, data cube and other types of dataset access. 
+The basic interface for the capabilities defined in this specification are described in DALI \citep{std:DALI}. DataLink can be used with DAP for finding access URL(s) for files,
+related resources, and data services such as SODA. DAP services also support VOSI-availability and VOSI-capabilities \citep{std:VOSI}  resources.
 
 
 
 
-The ObsCore data model has been defined in \cite{std:OBSCORE}, it contains and organizes the minimal set of metadata necessary to discover datasets of interest for a specific purpose. The metadata returned from the DAP data discovery request is defined by the ObsCore data model and serialized according to the ObsTAP specification \citep{std:OBSCORE}; this may be extended with additional metadata (columns)  in the future. Data discovery responses are returned in VOTable \citep{std:VOTABLE} format unless an alternate format is requested.
+The ObsCore data model has been defined in \cite{std:OBSCORE}, it contains and organizes the minimal set of metadata necessary to discover datasets of interest for
+a specific purpose. The metadata returned from the DAP data discovery request is defined by the ObsCore data model and serialized according to the ObsTAP specification
+\citep{std:OBSCORE}; this may be extended with additional metadata (columns)  in the future. Data discovery responses are returned in VOTable \citep{std:VOTABLE} format 
+unless an alternate format is requested.
 
 
 \subsection{The Role in the IVOA Architecture}
@@ -80,7 +94,9 @@ While this is not complete, it helps to understand the problem area covered by t
 
 \subsubsection{Simple Data Discovery}
 
-Simple data discovery entails finding services that provide parameter based discovery of images and datacubes, querying the service(s) with a few well known kinds of queries that cover greater than 95\% of use, and getting back easily parsed summary metadata about each available data product. The service discovery would be performed with an IVOA Registry search using a new service type defined for DAP. 
+Simple data discovery entails finding services that provide parameter based discovery of images and datacubes, querying the service(s) with a few well known kinds of queries 
+that cover greater than 95\% of use, and getting back easily parsed summary metadata about each available data product. The service discovery would be performed with an
+IVOA Registry search using a new service type defined for DAP. 
 
 
 The query for data would need to allow for querying in position, energy, time, and polarization:
@@ -103,12 +119,15 @@ position and energy, position and time, etc.). Queries should be easily formulat
 
 \subsubsection{Get Detailed Metadata}
 
-The data discovery phase returns a subset of the available metadata.  Clients may need additional detailed metadata (as defined by any IVOA Data model specification) in order to make decisions or perform computations required to access the data (e.g. using a separate low-level data access service as described in the SODA specification). The client must be able to easily figure out if detailed metadata is available and, using an identifier from the discovery response, make a call to a web service to retrieve the detailed metadata.
+The data discovery phase returns a subset of the available metadata.  Clients may need additional detailed metadata (as defined by any IVOA Data model specification) in order
+to make decisions or perform computations required to access the data (e.g. using a separate low-level data access service as described in the SODA specification). The client
+must be able to easily figure out if detailed metadata is available and, using an identifier from the discovery response, make a call to a web service to retrieve the detailed metadata.
 
 \subsubsection{Download Complete Datasets}
 \label{sec:sync}
 
-The client should be able to download complete datasets with information available in the discovery response. If the dataset is a single file, the service should provide an access URL to the file; if it is multiple files, then an access URL to a DataLink service [9] can be provided, but the client must be able to easily distinguish these two scenarios.
+The client should be able to download complete datasets with information available in the discovery response. If the dataset is a single file, the service should provide an
+access URL to the file; if it is multiple files, then an access URL to a DataLink service [9] can be provided, but the client must be able to easily distinguish these two scenarios.
 
 
 \subsubsection{Access a Dataset with Operations: Too Big to Download}
@@ -128,7 +147,8 @@ extracting a simple subset of an image or datacube.
 \label{sec:examples}
 
 
-Some of the support for these use cases is provided by the separate capabilities defined in the DataLink and SODA specifications. Together, these three specifications, plus TAP \citep{std:TAP}, and  within the framework provided by ObsCore, and the future cube data model provide a set of capabilities required to support a broad range of use cases.
+Some of the support for these use cases is provided by the separate capabilities defined in the DataLink and SODA specifications. Together, these three specifications,
+plus TAP \citep{std:TAP}, and  within the framework provided by ObsCore, and the future cube data model provide a set of capabilities required to support a broad range of use cases.
 
 
 
@@ -141,7 +161,9 @@ Some of the support for these use cases is provided by the separate capabilities
 
 
 
-Each box in the above diagram shows a single capability. The DAP query capability is defined in this specification; the SIA metadata capability is defined in a later version of the SODA specification, supported by the Cube DM specification. DataLink  and SODA are separate specifications. The dashed lines represent optimisations that are mentioned in use cases above, where subsequent service usage should be easy to discover and invoke.
+Each box in the above diagram shows a single capability. The DAP query capability is defined in this specification; the SIA metadata capability is defined in a later version
+of the SODA specification, supported by the Cube DM specification. DataLink  and SODA are separate specifications. The dashed lines represent optimisations that are mentioned
+in use cases above, where subsequent service usage should be easy to discover and invoke.
 
 
 
@@ -169,21 +191,30 @@ The DAP data discovery capability is implemented as a synchronous resource confo
 \label{tab:DALIspec}
 \end{table}
 
-A DAP service must have at least one \{query\} resource; it could have multiple \{query\} resources (e.g. to support alternate authentication schemes where the path is different). All \{query\} resources must be siblings of the VOSI-capabilities resource; this limitation enables a client with just the URL for a DAP {query} resource (e.g. from a Datalink service descriptor) to find the VOSI-capabilities resource and discover all the capabilities provided.
+A DAP service must have at least one \{query\} resource; it could have multiple \{query\} resources (e.g. to support alternate authentication schemes where the path is different).
+All \{query\} resources must be siblings of the VOSI-capabilities resource; this limitation enables a client with just the URL for a DAP {query} resource (e.g. from a Datalink 
+service descriptor) to find the VOSI-capabilities resource and discover all the capabilities provided.
 
 \subsection{\{query\} resource}
 \label{sec:query}
-The \{query\} resource is a synchronous web service resource that conforms to the DALI-sync description. The implementer is free to name (set the path of) this resource however they like; the client will find the resource path using the VOSI-capabilities resource. 
+The \{query\} resource is a synchronous web service resource that conforms to the DALI-sync description. The implementer is free to name (set the path of) this resource however
+they like; the client will find the resource path using the VOSI-capabilities resource. 
 
 As a DALI-sync resource, the parameters for a request may be submitted using an HTTP GET (query string) or POST action.
 
-All parameters for the \{query\} resource defined below must be supported by the service. Services must accept parameters and apply the constraints such that if a (ObsCore) record does not satisfy the constraints it is not included in the response. If the metadata for a field is not known (null), the constraint cannot be satisfied. The ObsCore data model defines which fields may be null and which must have a value. For example, if dataset(s) have unknown time coverage (t\_min and t\_max in ObsCore), a query with the TIME parameter must not return the record(s); queries without the TIME constraint could still return such records, so the caller can discover such dataset(s).
+All parameters for the \{query\} resource defined below must be supported by the service. Services must accept parameters and apply the constraints such that if a (ObsCore) record
+does not satisfy the constraints it is not included in the response. If the metadata for a field is not known (null), the constraint cannot be satisfied. The ObsCore data model
+defines which fields may be null and which must have a value. For example, if dataset(s) have unknown time coverage (t\_min and t\_max in ObsCore), a query with the TIME 
+parameter must not return the record(s); queries without the TIME constraint could still return such records, so the caller can discover such dataset(s).
 
 Client requests may include zero or more of the query parameters.
 
-All query parameters are multi-valued which means multiple occurrences of the parameter=value pairs as specified in the DALI recommendation are permitted. The constraints from multiple occurrences of a parameter are combined with a logical OR operator. The constraints from different parameters are combined with a logical AND operator.
+All query parameters are multi-valued which means multiple occurrences of the parameter=value pairs as specified in the DALI recommendation are permitted. The constraints from
+multiple occurrences of a parameter are combined with a logical OR operator. The constraints from different parameters are combined with a logical AND operator.
 
-Query parameters for numeric fields accept a single floating point value or a range of values with optional lower and upper bounds. Such range values are encoded using the VOTable array serialisation (space separated). If  the lower or upper bound is not specified, the range is open-ended. In VOTable arrays this uses the special values -Inf or +Inf. For example, the interval [300,600] is:
+Query parameters for numeric fields accept a single floating point value or a range of values with optional lower and upper bounds. Such range values are encoded using the VOTable
+array serialisation (space separated). If  the lower or upper bound is not specified, the range is open-ended. In VOTable arrays this uses the special values -Inf or +Inf. 
+For example, the interval [300,600] is:
 
 \begin{lstlisting}
 300 600 
@@ -206,13 +237,18 @@ The open-ended interval (-infinity,600] (all values less than or equal to 600) i
 If specified, the boundary value is always included in the interval.
 The units for numeric values are specified for each parameter and never included in the value.
  
-Except where explicitly noted (see for example~\ref{sec:ID}), query parameters for text or string fields are always case-sensitive and indicate an exact match. Wild carding is not allowed except where explicitly noted (see again ~\ref{sec:ID}). In other string-valued parameters multiple occurence of the same parameter should be used instead.
-The sections describing query parameters make use of fixed reference systems and units to simplify client and service implementation. These choices are not suitable for all domains; the values are chosen to enable the {query} resource to be used to search for most standard observational astronomy data. If they are not suitable for a specific domain of interest (e.g. planetary science) then it is feasible to write a very short standard that re-uses the DAP {query} capability but redefines the hard-coded systems and units. This new standard would have a new standardID to distinguish services that implement it from those that implement the capability defined here.
+Except where explicitly noted (see for example~\ref{sec:ID}), query parameters for text or string fields are always case-sensitive and indicate an exact match. Wild carding is not allowed
+except where explicitly noted (see again ~\ref{sec:ID}). In other string-valued parameters multiple occurence of the same parameter should be used instead.
+The sections describing query parameters make use of fixed reference systems and units to simplify client and service implementation. These choices are not suitable for all domains;
+the values are chosen to enable the {query} resource to be used to search for most standard observational astronomy data. If they are not suitable for a specific domain of interest
+(e.g. planetary science) then it is feasible to write a very short standard that re-uses the DAP {query} capability but redefines the hard-coded systems and units. This new standard
+would have a new standardID to distinguish services that implement it from those that implement the capability defined here.
 
 
 
 \subsubsection{MOC}
-The MOC parameter defines a spatial, temporal or combination of both subset of space-time to be searched using the \xtype{moc} defined in DALI. The parameter syntax is defined as in the MOC specification \citep{MOC2}
+The MOC parameter defines a spatial, temporal or combination of both subset of space-time to be searched using the \xtype{moc} defined in DALI. The parameter syntax is defined as in
+the MOC specification \citep{MOC2}
 
 
 Examples :
