@@ -264,7 +264,8 @@ Examples :
 \subsubsection{POS}
 \label{sec:POS}
 
-The POS parameter defines the positional region(s) to be searched for data. The value is made up of a shape keyword followed by coordinate values. A POS constraint is satisfied if the specified shape intersects the bounds (s\_region in the ObsCore data model) of the observation. 
+The POS parameter defines the positional region(s) to be searched for data. The value is made up of a shape keyword followed by coordinate values. A POS constraint is satisfied if 
+the specified shape intersects the bounds (s\_region in the ObsCore data model) of the observation. 
  The allowed shapes are:
 \begin{table}[H]
 \begin{tabular}{ll}
@@ -319,12 +320,15 @@ POS=RANGE 0.0 360.0 -90.0 90.0
 \end{lstlisting}
 
 
-This syntax for circles and polygons is in the same style as STC-S, but with no reference positions, coordinate systems, units, or geometric operators (union, intersection, not). Coordinate values are floating point right ascension (RA) and declination (DEC) in ICRS and the units are always degrees. Valid coordinate values are in [0,360] for longitude and [-90,90] for latitude (or NaN).
+This syntax for circles and polygons is in the same style as STC-S, but with no reference positions, coordinate systems, units, or geometric operators (union, intersection, not).
+Coordinate values are floating point right ascension (RA) and declination (DEC) in ICRS and the units are always degrees. Valid coordinate values are in [0,360] for longitude 
+and [-90,90] for latitude (or NaN).
 
 \subsubsection{BAND}
 \label{sec:BAND}
 
-The BAND parameter defines the energy interval(s) to be searched for data. The value is an open or closed energy interval. The interval always includes the bounding values. A BAND constraint is satisfied if the interval intersects the energy coverage of the observation ([em\_min,em\_max] in the ObsCore data model). \\ \\
+The BAND parameter defines the energy interval(s) to be searched for data. The value is an open or closed energy interval. The interval always includes the bounding values. 
+A BAND constraint is satisfied if the interval intersects the energy coverage of the observation ([em\_min,em\_max] in the ObsCore data model). \\ \\
 Find data with spectral coverage that overlaps 500 to 550nm:
 
 \begin{lstlisting}
@@ -348,14 +352,17 @@ BAND=550
 \end{lstlisting}
 
 
-Searching using a scalar value should match any data that includes the specified value; searching using an interval will find any data with energy coverage that intersects the specified interval.
+Searching using a scalar value should match any data that includes the specified value; searching using an interval will find any data with energy coverage that intersects 
+the specified interval.
 
-Energy values used in the BAND parameter are always assumed to be  observed wavelength in meters. The ObsCore data model does not define a specific reference frame for values of em\_min and em\_max; values in the BAND parameter are assumed to be in the same (unspecified) frame as the content (e.g. no specific frame or transformation should be assumed). 
+Energy values used in the BAND parameter are always assumed to be  observed wavelength in meters. The ObsCore data model does not define a specific reference frame for values of 
+em\_min and em\_max; values in the BAND parameter are assumed to be in the same (unspecified) frame as the content (e.g. no specific frame or transformation should be assumed). 
 
 \subsubsection{TIME}
 \label{sec:TIME}
 
-The TIME parameter defines the time interval(s) to be searched for data. The value is an open or closed interval with numeric values (interpreted as Modified Julian Dates). A TIME constraint is satisfied if the interval intersects the time coverage of the observation ([t\_min,t\_max] in the ObsCore data model).
+The TIME parameter defines the time interval(s) to be searched for data. The value is an open or closed interval with numeric values (interpreted as Modified Julian Dates). 
+A TIME constraint is satisfied if the interval intersects the time coverage of the observation ([t\_min,t\_max] in the ObsCore data model).
 
 A range of MJD values:
 
@@ -369,7 +376,8 @@ An instant in time:
 TIME=55678.123456
 \end{lstlisting}
 
-Values used in the TIME parameter are always interpreted as specified in DALI in the section on literal values: UTC time scale and UNKNOWN reference position \citep{std:STC}. Modified Julian Date values are always in days.
+Values used in the TIME parameter are always interpreted as specified in DALI in the section on literal values: UTC time scale and UNKNOWN reference position \citep{std:STC}. 
+Modified Julian Date values are always in days.
 
 \subsubsection{POL}
 \label{sec:POL}
@@ -407,7 +415,8 @@ This parameter is case insensitive.
 
 \subsubsection{FOV}
 
-The FOV parameter defines the range(s) of field of view (size) to be searched for data. This constraint is satisfied if the specified range includes the size of the field of view (s\_fov column of the ObsCore data model). \\ \\
+The FOV parameter defines the range(s) of field of view (size) to be searched for data. This constraint is satisfied if the specified range includes the size of the field of
+view (s\_fov column of the ObsCore data model). \\ \\
 Find data with field of view between 1 and 2 degrees:
 
 \begin{lstlisting}
@@ -434,7 +443,8 @@ Values used in the FOV parameter are always interpreted as angles expressed in d
 
 \subsubsection{SPATRES}
 
-The SPATRES parameter define the range(s) of spatial resolution to be searched for data. This constraint is satisfied if the specified range includes the spatial resolution of the data (s\_resolution column of the ObsCore data model). \\ \\
+The SPATRES parameter define the range(s) of spatial resolution to be searched for data. This constraint is satisfied if the specified range includes the spatial resolution 
+of the data (s\_resolution column of the ObsCore data model). \\ \\
 Find data with resolution better than 0.2 arcsec:
 
 \begin{lstlisting}
@@ -455,7 +465,8 @@ Values used in the SPATRES parameter are always interpreted as angles expressed 
 
 \subsubsection{SPECRP}
 
-The SPECRP parameter define the range(s) of spectral resolving power to be searched for data. This constraint is satisfied if the specified range includes the resolving power of the data (em\_res\_power column of the ObsCore data model). \\ \\
+The SPECRP parameter define the range(s) of spectral resolving power to be searched for data. This constraint is satisfied if the specified range includes the resolving power
+of the data (em\_res\_power column of the ObsCore data model). \\ \\
 Find data with resolution better than 1000:
 
 \begin{lstlisting}
@@ -477,7 +488,8 @@ Values used in the SPECRP parameter are dimensionless ($\lambda$/$\Delta$$\lambd
 
 \subsubsection{EXPTIME}
 
-The EXPTIME parameter defines the range(s) of exposure times to be searched for data. This constraint is satisfied if the specified range includes the exposure time of the data (t\_exptime column of the ObsCore  data model). \\ \\
+The EXPTIME parameter defines the range(s) of exposure times to be searched for data. This constraint is satisfied if the specified range includes the exposure time of 
+the data (t\_exptime column of the ObsCore  data model). \\ \\
 Find data with exposure time less than  60 seconds:
 
 \begin{lstlisting}
@@ -504,7 +516,8 @@ EXPTIME=1200 +Inf
 Values used in the EXPTIME parameter are always expressed in seconds (same units as the t\_exptime column in ObsCore).
 
 \subsubsection{TIMERES}
-The TIMERES parameter define the range(s) of temporal resolution to be searched for data. This constraint is satisfied if the specified range includes the temporal resolution of the data (t\_resolution column of the ObsCore data model). \\ \\
+The TIMERES parameter define the range(s) of temporal resolution to be searched for data. This constraint is satisfied if the specified range includes the temporal resolution of 
+the data (t\_resolution column of the ObsCore data model). \\ \\
 Find data with resolution better than 1.0 sec:
 
 \begin{lstlisting}
@@ -526,7 +539,9 @@ Values used in the TIMERES parameter are always expressed in seconds (same units
 \subsubsection{ID}
 \label{sec:ID}
 
-The ID parameter is a string-valued parameter that specifies the identifier of dataset(s). Values of the ID parameter are compared to the obs\_publisher\_did column of the ObsCore data model. Note that IVOIDs MUST be compared case-insensitively. As publisher dataset identifiers in the VO generally are IVOIDs, implementations will usually have to use case-insensitive comparisons here. When wildcarding of the end of the  ID is needed the expression "extensionof ivo://bla" SHOULD be used.
+The ID parameter is a string-valued parameter that specifies the identifier of dataset(s). Values of the ID parameter are compared to the obs\_publisher\_did column of the ObsCore data model. 
+Note that IVOIDs MUST be compared case-insensitively. As publisher dataset identifiers in the VO generally are IVOIDs, implementations will usually have to use case-insensitive comparisons here.
+When wildcarding of the end of the  ID is needed the expression "extensionof ivo://bla" SHOULD be used.
 
 
 \subsubsection{COLLECTION}
@@ -536,16 +551,20 @@ The COLLECTION parameter is a string-valued parameter that specifies the name of
 
 \subsubsection{FACILITY}
 
-The FACILITY parameter is a string-valued parameter that specifies the name of the facility (usually telescope) where the data was acquired. The value is compared with the facility\_name from the ObsCore data model.
+The FACILITY parameter is a string-valued parameter that specifies the name of the facility (usually telescope) where the data was acquired. The value is compared with the facility\_name 
+from the ObsCore data model.
 
 
 \subsubsection{INSTRUMENT}
-The INSTRUMENT parameter is a string-valued parameter that specifies the name of the instrument with which the data was acquired. The value is compared with the instrument\_name from the ObsCore data model.
+The INSTRUMENT parameter is a string-valued parameter that specifies the name of the instrument with which the data was acquired. The value is compared with the instrument\_name from the
+ObsCore data model.
 
 \subsubsection{DPTYPE}
 
 
-The DPTYPE parameter is a string-valued parameter that specifies the type of data. This parameter is case-insensitive. The value is compared with the dataproduct\_type from the ObsCore data model.  In contrast to SIA2.0 which allows only dataproduct\_types  \textit{image} and \textit{cube}, all the other dataproduct\_types are allowed, in such a way that we can constrain the service to retrieve visibility data, timeseries and event lists. Using DPTYPE with the "spectrum" value can be considered as an upgrade of the SSA protocol.
+The DPTYPE parameter is a string-valued parameter that specifies the type of data. This parameter is case-insensitive. The value is compared with the dataproduct\_type from the ObsCore data
+model.  In contrast to SIA2.0 which allows only dataproduct\_types  \textit{image} and \textit{cube}, all the other dataproduct\_types are allowed, in such a way that we can constrain the
+service to retrieve visibility data, timeseries and event lists. Using DPTYPE with the "spectrum" value can be considered as an upgrade of the SSA protocol.
 
 ObsCore extension have been defined for visibility data and TimeSeries. It is possible to query services using these extensions by optional query parameters defined in Appendix B.
 
@@ -571,12 +590,15 @@ CALIB=3
 
 \subsubsection{TARGET}
 
-The TARGET parameter is a string-valued parameter that specifies the name of the target (e.g. the intention of the original science program or observation). The value is compared with the target\_name from the ObsCore data model. This parameter is case sensitive.
+The TARGET parameter is a string-valued parameter that specifies the name of the target (e.g. the intention of the original science program or observation). The value is compared with the
+target\_name from the ObsCore data model. This parameter is case sensitive.
 
 
 \subsubsection{FORMAT}
 
-The FORMAT parameter specifies the  format returned by  the access  link.  The value is compared with the access\_format column from the ObsCore data model. This column describes the format of the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they could be the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}).  This parameter is case insensitive.
+The FORMAT parameter specifies the  format returned by  the access  link.  The value is compared with the access\_format column from the ObsCore data model. This column describes the format of 
+the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they could be the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}).
+This parameter is case insensitive.
 
 \subsubsection{RELEASEDATE}
 The RELEASEDATE parameter specifies the range of release dates to be searched for data. 
@@ -587,21 +609,27 @@ RELEASEDATE queries for services not providing the release\_date attribute SHOUL
 
 
 
-\subsubsection{RETRIEVEMODE (2 solutions)}
-This parameter is case-insensitive.
-\begin{itemize}
+%\subsubsection{RETRIEVEMODE (2 solutions)}
+%This parameter is case-insensitive.
+%\begin{itemize}
 
 
-\item solution 1 : The RETRIEVEMODE parameter allows to select between the full retrieval of the discovered dataset (RETRIEVEMODE = FULL) and a cutout operated by SODA (RETRIEVEMODE = CUTOUT). 
-The default value is "FULL". This parameter allows to find back the distinction operated by SIA1.0 between the archive and cutout modes. 
-SIA2.0 missed this parameter. The SIA2.0 service behavior was supposed to allow only direct full retrieval of datasets or to retrieve DataLink responses.
-In the "CUTOUT" case the access\_url is a SODA query using the same input parameters than the SIA query. In these conditions coverage parameters POS, CIRCLE, POLYGON, BAND, TIME, POL, specify both the search area and the subset of data to be extracted.  
+%\item solution 1 : The RETRIEVEMODE parameter allows to select between the full retrieval of the discovered dataset (RETRIEVEMODE = FULL) and a cutout operated by SODA (RETRIEVEMODE = CUTOUT). 
+%The default value is "FULL". This parameter allows to find back the distinction operated by SIA1.0 between the archive and cutout modes. 
+%SIA2.0 missed this parameter. The SIA2.0 service behavior was supposed to allow only direct full retrieval of datasets or to retrieve DataLink responses.
+%In the "CUTOUT" case the access\_url is a SODA query using the same input parameters than the SIA query. In these conditions coverage parameters POS, CIRCLE, POLYGON, BAND, TIME, POL,
+%specify both the search area and the subset of data to be extracted.  
 
 
-\item solution 2 : The RETRIEVEMODE parameter allows to select between the full retrieval of the discovered dataset (RETRIEVEMODE = FULL) and a cutout operated by SODA (RETRIEVEMODE = CUTOUT). SODA Service descriptors may be added to the SIA query response. In the "RETRIEVEMODE = CUTOUT" case the SODA service descriptor input parameters are predefined by the SIA input parameters. To get the discovered cutout the user simply has to validate the SODA activate button in her favorite VO client. In the default   (RETRIEVEMODE = FULL) case the SODA interface will prompt the user for interactively defined values.
-\end{itemize}
+%\item solution 2 : The RETRIEVEMODE parameter allows to select between the full retrieval of the discovered dataset (RETRIEVEMODE = FULL) and a cutout operated by SODA (RETRIEVEMODE = CUTOUT). 
+%SODA Service descriptors may be added to the SIA query response. In the "RETRIEVEMODE = CUTOUT" case the SODA service descriptor input parameters are predefined by the SIA input parameters.
+%To get the discovered cutout the user simply has to validate the SODA activate button in her favorite VO client. In the default   (RETRIEVEMODE = FULL) case the SODA interface will prompt 
+%the user for interactively defined values.
+%\end{itemize}
 \subsubsection{MAXREC}
-The MAXREC parameter is defined in DALI and allows the client to limit the number or records in the response. A service implementation may also impose default and maximum values for this limit. However the limit is determined, if the output is truncated due to the limit the server must indicate this using an overflow  (section~\ref{sec:succesful}) indicator except in the the special case of MAXREC=0, where the  service respond with metadata-only (normal output document with no records).
+The MAXREC parameter is defined in DALI and allows the client to limit the number or records in the response. A service implementation may also impose default and maximum values for this limit.
+However the limit is determined, if the output is truncated due to the limit the server must indicate this using an overflow  (section~\ref{sec:succesful}) indicator except in the the special 
+case of MAXREC=0, where the  service respond with metadata-only (normal output document with no records).
 
 
 \subsubsection{UPLOAD}
@@ -669,7 +697,8 @@ All DAL services must implement the /capabilities resource. The following capabi
 </vosi:capabilities>
 \end{lstlisting}
 
-Note that the {query} resource does not have to be named as shown in the accessURL(s) above. Multiple capability elements for the {query} and the {metadata} resources may be included; this is typically used if they differ in protocol (http vs. https) and/or authentication requirements.
+Note that the {query} resource does not have to be named as shown in the accessURL(s) above. Multiple capability elements for the {query} and the {metadata} resources may be included; 
+this is typically used if they differ in protocol (http vs. https) and/or authentication requirements.
 
 \section{\{query\} response}
 \label{sec:queryresponse}
@@ -677,9 +706,12 @@ Note that the {query} resource does not have to be named as shown in the accessU
 \subsection{Successful Query}
 \label{sec:succesful}
 
-The response from a successful call to the \{query\} resource is a table consistent with  ObsTAP responses as described in \cite{std:OBSCORE}. The ObsCore data model specifies all the (VOTable) field names, utypes, UCDs, and units to use in the response, as well as which fields must have values and which are allowed to be empty (null). The \{query\} response must contain the required ObsCore fields and may contain additional fields (from ObsCore or custom fields from the service provider). Examples are provided below (section~\ref{sec:Examples}).
+The response from a successful call to the \{query\} resource is a table consistent with  ObsTAP responses as described in \cite{std:OBSCORE}. The ObsCore data model specifies all the (VOTable)
+field names, utypes, UCDs, and units to use in the response, as well as which fields must have values and which are allowed to be empty (null). The \{query\} response must contain the required 
+ObsCore fields and may contain additional fields (from ObsCore or custom fields from the service provider). Examples are provided below (section~\ref{sec:Examples}).
 
-Successfully executed requests should result in a response with HTTP status code 200 (OK) and a response in the format requested by the client or in the default format for the service. The default output format is VOTable. Other output formats can be specified by the RESPONSEFORMAT parameter (see \cite{std:DALI}).
+Successfully executed requests should result in a response with HTTP status code 200 (OK) and a response in the format requested by the client or in the default format for the service. 
+The default output format is VOTable. Other output formats can be specified by the RESPONSEFORMAT parameter (see \cite{std:DALI}).
 
 The service should set the following HTTP headers to the correct values where possible.
 \begin{table}[H]
@@ -703,11 +735,13 @@ Since the \{query\} response is usually dynamically generated, the Content-Lengt
 \subsubsection{Related Service Metadata}
 The DataLink specification  gives a recipe for including additional resources in VOTable that enable the client to invoke services using values from the table as parameter values. 
 
-If the provider implements a DataLink service for the data being found via DAP, the \{query\} response should include a description for invoking the DataLink service, usually using values from the obs\_publisher\_did column.
+If the provider implements a DataLink service for the data being found via DAP, the \{query\} response should include a description for invoking the DataLink service, usually using
+values from the obs\_publisher\_did column.
 
  
 
-If the provider implements a SODA capability for the data being found via DAP and this capability can be invoked directly using an identifier in the \{query\} response, the \{query\} response should include a description for invoking this capability, usually using values from the obs\_publisher\_did column.
+If the provider implements a SODA capability for the data being found via DAP and this capability can be invoked directly using an identifier in the \{query\} response,
+the \{query\} response should include a description for invoking this capability, usually using values from the obs\_publisher\_did column.
 
 
 
@@ -717,7 +751,9 @@ If the provider implements a SODA capability for the data being found via DAP an
 
 
 
-The DataLink specification describes a mechanism for describing a service within a VOTable resource and recommends that services can describe themselves with a special resource with name="this". DAP \{query\} responses should include a descriptor describing both standard and custom query parameters (if applicable). The descriptor for a service with standard parameters (see~\ref{sec:query}) would be:
+The DataLink specification describes a mechanism for describing a service within a VOTable resource and recommends that services can describe themselves with a special resource with name="this".
+DAP \{query\} responses should include a descriptor describing both standard and custom query parameters (if applicable). The descriptor for a service with standard parameters 
+(see~\ref{sec:query}) would be:
 
 \begin{lstlisting}[language=XML]
 <RESOURCE type="meta" utype="adhoc:service" name="this">
@@ -757,17 +793,20 @@ The DataLink specification describes a mechanism for describing a service within
 </RESOURCE>
 
 \end{lstlisting}
-This VOTable resource should be included in the output from all queries; it is especially useful for MAXREC=0 queries since inclusion of the self descriptor would mean that all inputs and outputs would be fully described.
+This VOTable resource should be included in the output from all queries; it is especially useful for MAXREC=0 queries since inclusion of the self descriptor would mean that all inputs and 
+outputs would be fully described.
 
 
 
 
 \subsubsection{Use of access\_url and access\_format}
 
-If the DAP service is only dealing with simple data (one file per result), the access\_url column may be a link directly to that file, in which case the access\_format column should specify the file format (e.g. application/fits). 
+If the DAP service is only dealing with simple data (one file per result), the access\_url column may be a link directly to that file, in which case the access\_format column should specify
+the file format (e.g. application/fits). 
 
 
-If the data provider implements a DataLink service for the data being found via the SIA {query} capability, they may put a URL to invoke the DataLink {links} capability (with ID parameter and value) in the access\_url column; if they do this, they must also put the standard DataLink MIME type in the access\_format column.
+If the data provider implements a DataLink service for the data being found via the SIA {query} capability, they may put a URL to invoke the DataLink {links} capability (with ID parameter and 
+value) in the access\_url column; if they do this, they must also put the standard DataLink MIME type in the access\_format column.
 
 
 
@@ -775,7 +814,8 @@ If the data provider implements a DataLink service for the data being found via 
 
 \subsection{Errors}
 \label{sec:error-codes}
-The error handling specified for DALI-sync resources applies to service failure. If the requested format is VOTable, the error document must be VOTable as described by DALI, except when the service is broken.  If the requested format is one of the plain text (csv or tsv) formats, the error document should also be plain text using the text/plain content-type.
+The error handling specified for DALI-sync resources applies to service failure. If the requested format is VOTable, the error document must be VOTable as described by DALI, except when 
+the service is broken.  If the requested format is one of the plain text (csv or tsv) formats, the error document should also be plain text using the text/plain content-type.
 The error message must start with one of the strings in the following table, in order of specificity:
 
 \begin{table}[H]
@@ -795,7 +835,8 @@ DefaultFault&General error (not covered above)\cr
 \label{tab:ErrMess}
 \end{table}
 
-In all cases, the service may append additional useful information to the error strings above. If there is additional text, it must be separated from the error string with a colon (:) character, for example:
+In all cases, the service may append additional useful information to the error strings above. If there is additional text, it must be separated from the error string with a colon (:) character,
+for example:
 \begin{lstlisting}
 UsageFault: invalid BAND value -2
 \end{lstlisting}
@@ -1014,7 +1055,8 @@ Note: Spaces in parameter values must be URL-encoded as \%2B or +; we leave this
   </RESOURCE> 
 </VOTABLE>
 \end{lstlisting}
-         How do I query a service containing radio cubes from Alma operated by NRAO in a circle of 0.1 deg around position 180.47 -18.70 in the CO band in the range 800 microns to 900 microns and made in the time range between Mjd=55708 and 55710 ? \\
+         How do I query a service containing radio cubes from Alma operated by NRAO in a circle of 0.1 deg around position 180.47 -18.70 in the CO band in the range 800 microns to 900 microns
+         and made in the time range between Mjd=55708 and 55710 ? \\
 Note: Spaces in parameter values must be URL-encoded as \%2B or +; we leave this out of the example to make it easier to read.\\
 
 {\footnotesize http://dalservices.ivoa.net/dap?REQUEST=query\&POS=CIRCLE 180.475 -18.70 0.01 \\ \&BAND= 0.0008 0.0009\&TIME= 55708 55710\&COLLECTION=ALMAi\&DPTYPE=image} 
@@ -1346,8 +1388,10 @@ Formatting fixes and regenerated table of contents.
 \subsection{PR-SIA-2.0-20150730}
 Editorial and organisational changes from TCG review.
 \subsection{PR-SIA-2.0-20150610}
-Changed the serialisation of numeric ranges in parameter values to use standard VOTable array format (space s eparated) so that parameters can be correctly described as accepting an array of numeric values rather than a string. Removed support for ISO8601 (timestamp) format from TIME parameter. \\ \\
-Added subsection for MAXREC parameter. Changed use of UNKNOWN (concept from STC) coordinate system to a plain text description. Clarified that numeric arguments to POS are floating point values (in examples and text). \\ \\
+Changed the serialisation of numeric ranges in parameter values to use standard VOTable array format (space s eparated) so that parameters can be correctly described as accepting an array
+of numeric values rather than a string. Removed support for ISO8601 (timestamp) format from TIME parameter. \\ \\
+Added subsection for MAXREC parameter. Changed use of UNKNOWN (concept from STC) coordinate system to a plain text description. Clarified that numeric arguments to POS 
+are floating point values (in examples and text). \\ \\
 Moved section comparing SIA-1.0 and SIA-2.0 earlier in the introduction. \\ \\ 
 Added example output for queries. \\ \\
 Add restriction that {query} resources must be a sibling of VOSI-capabilities. \\ \\
@@ -1370,7 +1414,8 @@ Changed the error message strings to use the word Fault (following DataLink and 
 FORMAT and UPLOAD parameters are still TBD. \\ \\
 Added FOV, SPATRES, and EXPTIME parameters to query ObsCore fields s\_fov, s\_resolution, and t\_exptime respectively. \\ \\
 Removed the BOX from POS shape list. \\ \\
-Fixed BAND parameter to specify that values are vacuum wavelength in meters with UNKNOWN reference position. \\ \\Clarified TIME parameter to specify values are UTC time scale with UNKNOWN reference position (as in DALI). \\ \\
+Fixed BAND parameter to specify that values are vacuum wavelength in meters with UNKNOWN reference position. \\ \\Clarified TIME parameter to specify values are UTC time scale 
+with UNKNOWN reference position (as in DALI). \\ \\
 Marked text related to the {metadata} capability as placeholder(s) that are only informational in the SIA-2.0 specification. \\ \\
 Removed the section on DALI-examples because it didn't add anything. \\ \\
 Added missing query constraints to the use cases in 1.2.1 (from CSP summary). \\ \\
