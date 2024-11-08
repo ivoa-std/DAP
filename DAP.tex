@@ -596,8 +596,8 @@ target\_name from the ObsCore data model. This parameter is case sensitive.
 
 \subsubsection{FORMAT}
 
-The FORMAT parameter specifies the  format returned by  the access  link.  The value is compared with the access\_format column from the ObsCore data model. This column describes the format of 
-the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits) or they could be the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}).
+The FORMAT parameter specifies the  format returned by  the access  link.  The value is compared with the access\_format column from the ObsCore data model when this one contains a dataset MIME type. 
+In that case this column describes the format of the response from the access\_url (see 3.1.3) so the values could be data file types (e.g. application/fits).  In case access\_format contains  the DataLink  MIME type (\cite{std:DataLink}, \cite{std:TSV}) the FORMAT parameter value constrains the content_type value for the #this items in the DataLink response.
 This parameter is case insensitive.
 
 \subsubsection{RELEASEDATE}
