@@ -7,7 +7,7 @@ DOCNAME = DAP
 DOCVERSION = 2.1
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2022-09-28
+DOCDATE = 2024-11-11
 
 # What is it you're writing: NOTE, WD, PR, or REC
 DOCTYPE = WD
